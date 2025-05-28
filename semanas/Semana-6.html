@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sesión de Aprendizaje: React</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px;
+      background-color: #f9fafb;
+      color: #222;
+    }
+    h1{
+      text-align: center;
+      color: #1a73e8;
+    }
+    h2 {
+      color: #1a73e8;
+    }
+    .section {
+      background: white;
+      padding: 20px;
+      margin-top: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    th {
+      background-color: #61dafb;
+      color: #20232a;
+    }
+    pre {
+      background-color: #282c34;
+      color: #61dafb;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .highlight {
+      background-color: #e0f7fa;
+      border-left: 6px solid #00acc1;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘React</h1>
+
+  <div class="section">
+    <h2>1. ¿Qué es React?</h2>
+    <p>
+      React es una <strong>librería de JavaScript</strong> desarrollada por Facebook para construir interfaces de usuario (UI) de forma eficiente y declarativa. 
+      Permite crear componentes reutilizables que gestionan su propio estado, facilitando la creación de aplicaciones web dinámicas y rápidas.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>2. Conceptos Clave de React</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th>Descripción</th>
+          <th>Ejemplo/Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Componente</td>
+          <td>Bloque reutilizable de UI que puede ser función o clase</td>
+          <td>Ejemplo: <code>function Hola() { return &lt;h1&gt;Hola&lt;/h1&gt;; }</code></td>
+        </tr>
+        <tr>
+          <td>JSX</td>
+          <td>Extensión de sintaxis para escribir HTML dentro de JavaScript</td>
+          <td>Ejemplo: <code>&lt;div&gt;Hola Mundo&lt;/div&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Props</td>
+          <td>Parámetros que se pasan a los componentes</td>
+          <td>Ejemplo: <code>&lt;Saludo nombre="Ana" /&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Estado (State)</td>
+          <td>Datos internos que un componente puede manejar y actualizar</td>
+          <td>Se usa <code>useState</code> en componentes funcionales</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>3. ¿Cómo usar React?</h2>
+    <ol>
+      <li>Instalar Node.js y npm (gestor de paquetes)</li>
+      <li>Crear un proyecto con <code>create-react-app</code> (herramienta oficial)</li>
+      <li>Escribir componentes usando JSX</li>
+      <li>Usar <code>npm start</code> para correr la aplicación localmente</li>
+    </ol>
+
+    <div class="highlight">
+      <p><strong>Comando para crear proyecto React:</strong></p>
+      <pre>npx create-react-app mi-app</pre>
+      <p>Luego:</p>
+      <pre>cd mi-app
+npm start</pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4. Ejemplo básico de un componente React</h2>
+    <pre>
+import React, { useState } from 'react';
+
+function Contador() {
+  const [contador, setContador] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Contador: {contador}&lt;/h1&gt;
+      &lt;button onClick={() => setContador(contador + 1)}&gt;Incrementar&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Contador;
+    </pre>
+    <p>Este componente muestra un contador que aumenta al hacer click en el botón.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Diagrama básico de flujo en React</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Elemento</th>
+          <th>Descripción</th>
+          <th>Función</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>JSX</td>
+          <td>Escribe la UI de forma declarativa</td>
+          <td>Define la estructura visual</td>
+        </tr>
+        <tr>
+          <td>Componentes</td>
+          <td>Construyen la UI en partes reutilizables</td>
+          <td>Manejan props y estado</td>
+        </tr>
+        <tr>
+          <td>Estado (State)</td>
+          <td>Datos que pueden cambiar con interacción</td>
+          <td>Actualiza la UI cuando cambia</td>
+        </tr>
+        <tr>
+          <td>Eventos</td>
+          <td>Acciones como clicks o inputs</td>
+          <td>Disparan cambios en estado o comportamiento</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>6. Ventajas de usar React</h2>
+    <ul>
+      <li>Componentes reutilizables y fáciles de mantener</li>
+      <li>Actualización eficiente del DOM con Virtual DOM</li>
+      <li>Gran comunidad y ecosistema</li>
+      <li>Se puede usar con otras librerías y frameworks</li>
+    </ul>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML Básico y Avanzado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    h1{
+      text-align: center;
+      color: #1a73e8;
+    }
+    h2 {
+      color: #007acc;
+    }
+    .section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    th {
+      background-color: #007acc;
+      color: white;
+    }
+    pre {
+      background-color: #272822;
+      color: #a6e22e;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .highlight {
+      background-color: #e8f4fd;
+      border-left: 6px solid #007acc;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 HTML Básico y Avanzado</h1>
+
+  <div class="section">
+    <h2>1. ¿Qué es HTML?</h2>
+    <p><strong>HTML</strong> (HyperText Markup Language) es el lenguaje de marcado estándar para crear páginas web. Define la estructura del contenido web usando etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;div&gt;</code>, etc.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="Logo HTML5" width="400">
+  </div>
+
+  <div class="section">
+    <h2>2. ¿Para qué se usa HTML?</h2>
+    <ul>
+      <li>Diseñar la estructura básica de una página web</li>
+      <li>Insertar textos, imágenes, enlaces, videos</li>
+      <li>Definir encabezados, secciones, artículos</li>
+      <li>Base para estilos (CSS) y programación (JavaScript)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. ¿Cómo se usa HTML?</h2>
+    <p>Se escribe dentro de archivos <code>.html</code> y se ejecuta en un navegador.</p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi Primera Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;
+    &lt;p&gt;Este es un párrafo&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>4. HTML Básico: Etiquetas Comunes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Etiqueta</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;h1&gt;</code></td>
+          <td>Encabezado principal</td>
+          <td><pre>&lt;h1&gt;Título&lt;/h1&gt;</pre></td>
+        </tr>
+        <tr>
+          <td><code>&lt;p&gt;</code></td>
+          <td>Párrafo de texto</td>
+          <td><pre>&lt;p&gt;Texto aquí&lt;/p&gt;</pre></td>
+        </tr>
+        <tr>
+          <td><code>&lt;a href=""&gt;</code></td>
+          <td>Hipervínculo</td>
+          <td><pre>&lt;a href="https://google.com"&gt;Ir a Google&lt;/a&gt;</pre></td>
+        </tr>
+        <tr>
+          <td><code>&lt;img src=""&gt;</code></td>
+          <td>Imagen</td>
+          <td><pre>&lt;img src="foto.jpg" alt="Foto"&gt;</pre></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>5. HTML Avanzado: Semántica y Formularios</h2>
+    <p><strong>HTML5</strong> introduce etiquetas semánticas que mejoran la organización del contenido.</p>
+    <ul>
+      <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
+    </ul>
+
+    <p><strong>Ejemplo completo:</strong></p>
+    <pre>
+&lt;header&gt;
+  &lt;h1&gt;Mi Blog&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Post 1&lt;/h2&gt;
+    &lt;p&gt;Contenido del post&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+&lt;footer&gt;© 2025&lt;/footer&gt;
+    </pre>
+
+    <p><strong>Formularios:</strong></p>
+    <pre>
+&lt;form&gt;
+  &lt;label&gt;Nombre: &lt;/label&gt;
+  &lt;input type="text" name="nombre"&gt;
+  &lt;button&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>6. ¿Con quién se complementa HTML?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tecnología</th>
+          <th>Descripción</th>
+          <th>Ejemplo de uso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CSS</td>
+          <td>Para aplicar estilos al HTML</td>
+          <td><pre>&lt;p style="color:red"&gt;Texto rojo&lt;/p&gt;</pre></td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>Para agregar interactividad</td>
+          <td><pre>&lt;button onclick="alert('Hola')"&gt;Click&lt;/button&gt;</pre></td>
+        </tr>
+        <tr>
+          <td>PHP / Node.js</td>
+          <td>Para gestionar bases de datos y lógica de servidor</td>
+          <td><code>PHP: echo "Hola";</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>7. Diferencias con otros lenguajes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>HTML</th>
+          <th>CSS</th>
+          <th>JavaScript</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Estructura del contenido</td>
+          <td>Diseño y apariencia</td>
+          <td>Interacción y lógica</td>
+        </tr>
+        <tr>
+          <td>Lenguaje de marcado</td>
+          <td>Lenguaje de estilo</td>
+          <td>Lenguaje de programación</td>
+        </tr>
+      </tbody>
+    </table>
+    <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--PCZ7GRkU--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--0tOHJ-bF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/jcnmhngldrdlm4gwhpiw.png" alt="HTML vs CSS vs JS">
+  </div>
+
+  <div class="section">
+    <h2>8. Conclusión</h2>
+    <div class="highlight">
+      <p><strong>HTML</strong> es el primer paso para aprender desarrollo web. A medida que se domina, se puede combinar con CSS y JavaScript para crear sitios modernos, dinámicos y atractivos.</p>
+    </div>
+  </div>
+
+</body>
+</html>
+

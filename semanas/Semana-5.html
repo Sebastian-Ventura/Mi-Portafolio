@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sesión de Aprendizaje: JavaScript Básico</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px;
+      background-color: #f0f4f8;
+      color: #222;
+    }
+    h1, h2 {
+      color: #004080;
+    }
+    .section {
+      background: white;
+      padding: 20px;
+      margin-top: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      text-align: left;
+    }
+    th {
+      background-color: #0074D9;
+      color: white;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    pre {
+      background-color: #e1ecf4;
+      border-left: 6px solid #0074D9;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .highlight {
+      background-color: #dff0d8;
+      border-left: 6px solid #3c763d;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 JavaScript Básico</h1>
+
+  <div class="section">
+    <h2>1. ¿Qué es JavaScript?</h2>
+    <p>JavaScript es un lenguaje de programación que permite agregar interactividad a las páginas web. Se ejecuta en el navegador y puede manipular elementos HTML, responder a eventos, validar formularios, y mucho más.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Conceptos Básicos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Variables</td>
+          <td>Almacenan datos para usarlos luego</td>
+          <td><code>let nombre = "Ana";</code></td>
+        </tr>
+        <tr>
+          <td>Tipos de datos</td>
+          <td>Texto, números, booleanos, arrays, objetos</td>
+          <td><code>let edad = 20; let activo = true;</code></td>
+        </tr>
+        <tr>
+          <td>Funciones</td>
+          <td>Bloques de código que ejecutan tareas</td>
+          <td><code>function saludar() { alert("Hola"); }</code></td>
+        </tr>
+        <tr>
+          <td>Eventos</td>
+          <td>Acciones que disparan código, como clicks</td>
+          <td><code>button.onclick = function() { alert("Click"); };</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>3. Declarar Variables</h2>
+    <p>En JavaScript, puedes declarar variables usando <code>var</code>, <code>let</code> o <code>const</code>. Aquí la diferencia:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Palabra clave</th>
+          <th>Alcance (Scope)</th>
+          <th>¿Puede cambiar?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>var</td>
+          <td>Global o función</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>let</td>
+          <td>Bloque</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>const</td>
+          <td>Bloque</td>
+          <td>No, es constante</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>4. Ejemplo Práctico: Mostrar mensaje con función y botón</h2>
+    <p>El siguiente botón muestra un mensaje cuando es presionado:</p>
+
+    <button onclick="mostrarMensaje()" style="padding:10px 15px; font-size:16px;">Haz clic aquí</button>
+
+    <script>
+      function mostrarMensaje() {
+        alert("¡Hola! Has hecho clic en el botón.");
+      }
+    </script>
+  </div>
+
+  <div class="section">
+    <h2>5. Estructuras de Control</h2>
+    <p>Permiten controlar el flujo del programa.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Estructura</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Condicional if</td>
+          <td>Ejecuta código si una condición es verdadera</td>
+          <td><code>if(edad &gt;= 18) { alert("Mayor de edad"); }</code></td>
+        </tr>
+        <tr>
+          <td>Bucle for</td>
+          <td>Repite código varias veces</td>
+          <td><code>for(let i=0; i&lt;5; i++) { console.log(i); }</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>6. Tipos de Datos Comunes</h2>
+    <div class="highlight">
+      <ul>
+        <li><strong>String:</strong> Texto, ejemplo: <code>"Hola Mundo"</code></li>
+        <li><strong>Number:</strong> Números enteros o decimales, ejemplo: <code>42</code>, <code>3.14</code></li>
+        <li><strong>Boolean:</strong> Verdadero o falso, ejemplo: <code>true</code>, <code>false</code></li>
+        <li><strong>Array:</strong> Lista ordenada de elementos, ejemplo: <code>[1, 2, 3]</code></li>
+        <li><strong>Object:</strong> Colección de pares clave-valor, ejemplo: <code>{nombre: "Ana", edad: 20}</code></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>7. Comentarios en JavaScript</h2>
+    <p>Para agregar notas o explicar código sin afectar la ejecución:</p>
+    <pre><code>// Comentario de una línea
+/*
+Comentario
+de
+varias líneas
+*/
+</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>8. Consola de JavaScript</h2>
+    <p>Herramienta para imprimir mensajes y depurar código.</p>
+    <p>Ejemplo:</p>
+    <pre><code>console.log("Hola consola");</code></pre>
+    <p>Abre la consola en el navegador con <kbd>F12</kbd> o <kbd>Ctrl+Shift+I</kbd> y ve la pestaña "Console".</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Ejemplo práctico en la consola</h2>
+    <p>Presiona el botón para mostrar números en la consola:</p>
+    <button onclick="mostrarNumeros()" style="padding:10px 15px; font-size:16px;">Mostrar Números</button>
+    <script>
+      function mostrarNumeros() {
+        for(let i=1; i<=5; i++) {
+          console.log("Número:", i);
+        }
+        alert("Mira la consola para ver los números");
+      }
+    </script>
+  </div>
+
+</body>
+</html>
+

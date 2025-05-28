@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Semana 1: Codigo Emmet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px;
+      background-color: #f4f7f6;
+      color: #333;
+    }
+    h1{
+      text-align: center;
+      color: #1a73e8;
+    }
+    h2{
+      color: #1a73e8;
+    }
+    .section {
+      background: white;
+      padding: 20px;
+      margin-top: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    th {
+      background-color: #1a73e8;
+      color: white;
+    }
+    pre {
+      background-color: #282c34;
+      color: #61dafb;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      margin-top: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .highlight {
+      background-color: #e3f2fd;
+      border-left: 6px solid #1a73e8;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📚 Semana 1: Codigo Emmet</h1>
+
+  <div class="section">
+    <h2>1. ¿Qué es Emmet?</h2>
+    <p>
+      Emmet es una herramienta o plugin para editores de código (como Visual Studio Code, Sublime Text, Atom, entre otros) que permite escribir código HTML y CSS <strong>más rápido</strong> usando abreviaciones.
+      Convierte esas abreviaciones en código completo automáticamente, ahorrando mucho tiempo y esfuerzo.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>2. ¿Para qué sirve Emmet?</h2>
+    <ul>
+      <li>Generar estructuras HTML completas con pocas teclas.</li>
+      <li>Crear rápidamente selectores y reglas CSS.</li>
+      <li>Acelerar la escritura y reducir errores al codificar.</li>
+      <li>Mejorar la productividad en el desarrollo web.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. ¿Cómo usar Emmet?</h2>
+    <p>
+      Generalmente, escribes una abreviatura en el editor y presionas la tecla <strong>Tab</strong> para que Emmet expanda la abreviatura en código completo.
+      <br />
+      Ejemplo: Escribe <code>ul>li*3</code> y presiona <code>Tab</code>.
+    </p>
+
+    <div class="highlight">
+      <p><strong>Pasos básicos para usar Emmet:</strong></p>
+      <ol>
+        <li>Abre tu editor de código compatible con Emmet.</li>
+        <li>Escribe una abreviatura Emmet válida.</li>
+        <li>Presiona <code>Tab</code> o la tecla asignada para expandir.</li>
+        <li>Observa cómo se genera automáticamente el código completo.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4. Tabla de abreviaciones comunes en Emmet</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Abreviación</th>
+          <th>Descripción</th>
+          <th>Resultado Expandido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>div</code></td>
+          <td>Etiqueta <code>div</code> simple</td>
+          <td>
+            <pre>&lt;div&gt;&lt;/div&gt;</pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>ul>li*3</code></td>
+          <td>Lista <code>ul</code> con 3 <code>li</code></td>
+          <td>
+            <pre>&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>nav>ul>li.item$*4</code></td>
+          <td>Menú <code>nav</code> con lista y 4 elementos con clase</td>
+          <td>
+            <pre>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li class="item1"&gt;&lt;/li&gt;
+    &lt;li class="item2"&gt;&lt;/li&gt;
+    &lt;li class="item3"&gt;&lt;/li&gt;
+    &lt;li class="item4"&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>header>h1{Título}</code></td>
+          <td>Etiqueta <code>header</code> con título dentro</td>
+          <td>
+            <pre>&lt;header&gt;
+  &lt;h1&gt;Título&lt;/h1&gt;
+&lt;/header&gt;</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>5. Ejemplos Prácticos de Emmet</h2>
+    <p>Ejemplo 1: Crear un formulario simple con campos de texto y botón</p>
+    <pre>form>label{Nombre}:input[type="text"]+label{Email}:input[type="email"]+button{Enviar}</pre>
+    <p><strong>Se expande a:</strong></p>
+    <pre>
+&lt;form&gt;
+  &lt;label&gt;Nombre&lt;/label&gt;
+  &lt;input type="text" /&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input type="email" /&gt;
+  &lt;button&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+
+    <p>Ejemplo 2: Crear un artículo con título, párrafo e imagen</p>
+    <pre>article>h2{Título}+p{Texto del párrafo}+img[src="img.jpg" alt="Imagen"]</pre>
+    <p><strong>Se expande a:</strong></p>
+    <pre>
+&lt;article&gt;
+  &lt;h2&gt;Título&lt;/h2&gt;
+  &lt;p&gt;Texto del párrafo&lt;/p&gt;
+  &lt;img src="img.jpg" alt="Imagen" /&gt;
+&lt;/article&gt;
+    </pre>
+  </div>
+
+  <div class="section">
+    <h2>6. Ventajas de Emmet</h2>
+    <ul>
+      <li>Aumenta la velocidad de escritura del código.</li>
+      <li>Reduce errores comunes al codificar.</li>
+      <li>Mejora la productividad y flujo de trabajo.</li>
+      <li>Compatible con muchos editores de texto.</li>
+    </ul>
+  </div>
+
+</body>
+</html>

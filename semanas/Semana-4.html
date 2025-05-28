@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap vs Tailwind CSS</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 40px;
+    }
+    h1{
+      text-align: center;
+      color: #1a73e8;
+    }
+    h2 {
+      color: #1a73e8;
+    }
+    .section {
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .dark-mode .section {
+      background-color: #1f2937;
+      color: white;
+    }
+    .dark-mode .table thead {
+      background-color: #111827;
+      color: white;
+    }
+    .dark-mode .table tbody td {
+      color: white;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- Título principal -->
+  <h1 class="text-4xl font-bold text-center mb-6"> Bootstrap y Tailwind CSS</h1>
+
+  <!-- Definiciones -->
+   <div class="section">
+    <h2 class="text-2xl font-semibold">1. ¿Qué es Bootstrap?</h2>
+    <p>Bootstrap es un framework CSS basado en componentes reutilizables (botones, navbars, modales, etc.) con un diseño moderno y responsive.</p>
+    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap Logo" width="150">
+  </div>
+
+  <div class="section">
+    <h2 class="text-2xl font-semibold">2. ¿Qué es Tailwind CSS?</h2>
+    <p>Tailwind CSS es un framework utility-first, lo que significa que usas clases pequeñas como <code>bg-blue-500</code>, <code>text-center</code> para construir interfaces a medida, sin necesidad de sobrescribir estilos.</p>
+    <img src="https://www.pngwing.com/en/free-png-aygwc" alt="Tailwind Logo" width="100%">
+  </div>
+
+
+  <!-- Cuadro comparativo -->
+  <div class="section">
+    <h2 class="text-2xl font-semibold">3. Comparación rápida</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Aspecto</th>
+          <th>Bootstrap</th>
+          <th>Tailwind CSS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Enfoque</td><td>Component-based</td><td>Utility-first</td></tr>
+        <tr><td>Personalización</td><td>Limitada</td><td>Muy Alta</td></tr>
+        <tr><td>Modo Oscuro</td><td>Manual</td><td>Integrado</td></tr>
+        <tr><td>Curva de Aprendizaje</td><td>Fácil</td><td>Intermedia</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Ejemplos Reales -->
+  <div class="section">
+    <h2 class="text-2xl font-semibold">4. Ejemplos prácticos</h2>
+
+    <!-- Botón Bootstrap -->
+    <h3 class="text-lg font-medium mt-4">Botón en Bootstrap</h3>
+    <button class="btn btn-primary">Botón Bootstrap</button>
+    <pre><code>&lt;button class="btn btn-primary"&gt;Botón Bootstrap&lt;/button&gt;</code></pre>
+
+    <!-- Botón Tailwind -->
+    <h3 class="text-lg font-medium mt-4">Botón en Tailwind</h3>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Botón Tailwind</button>
+    <pre><code>&lt;button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"&gt;Botón Tailwind&lt;/button&gt;</code></pre>
+
+    <!-- Tarjeta Bootstrap -->
+    <h3 class="text-lg font-medium mt-4">Tarjeta Bootstrap</h3>
+    <div class="card" style="width: 18rem;">
+      <img src="https://picsum.photos/300/150" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Título</h5>
+        <p class="card-text">Texto de ejemplo.</p>
+      </div>
+    </div>
+
+    <!-- Tarjeta Tailwind -->
+    <h3 class="text-lg font-medium mt-4">Tarjeta Tailwind</h3>
+    <div class="max-w-sm bg-white rounded-xl overflow-hidden shadow-lg">
+      <img class="w-full" src="https://picsum.photos/300/150" alt="Imagen">
+      <div class="p-4">
+        <h5 class="font-bold text-xl">Título</h5>
+        <p class="text-gray-700">Texto de ejemplo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modo Oscuro -->
+  <div class="section">
+    <h2 class="text-2xl font-semibold">5. Modo Oscuro en Tailwind</h2>
+    <p>Tailwind permite habilitar el modo oscuro con la clase <code>dark</code> y estilos condicionales:</p>
+    <pre><code>&lt;html class="dark"&gt;
+  &lt;div class="bg-white dark:bg-black text-black dark:text-white"&gt;
+    Modo Oscuro Activo
+  &lt;/div&gt;
+&lt;/html&gt;</code></pre>
+    <img src="img\modooscuro.jpg" width="100%" alt="Dark mode Tailwind">
+    <!-- Toggle dark mode -->
+  </div>
+
+  <!-- Conclusión -->
+  <div class="section">
+    <h2 class="text-2xl font-semibold">6. Conclusión</h2>
+    <p><strong>Bootstrap</strong> es ideal para desarrollos rápidos con componentes listos, especialmente útil en aplicaciones empresariales o prototipos.</p>
+    <p><strong>Tailwind CSS</strong> es más flexible, moderno y poderoso a largo plazo, ideal para interfaces personalizadas y diseños a medida.</p>
+
+    <div class="alert alert-success mt-3">
+      🔍 Si eres principiante: comienza con <strong>Bootstrap</strong>. Si quieres más control visual y escalabilidad, usa <strong>Tailwind</strong>.
+    </div>
+  </div>
+<script>
+    const toggle = document.createElement('button');
+    toggle.textContent = "🌙 Alternar modo oscuro";
+    toggle.className = "btn btn-dark mb-4";
+    toggle.onclick = () => document.body.classList.toggle('dark-mode');
+    document.body.insertBefore(toggle, document.body.firstChild);
+  </script>
+</body>
+</html>
+
