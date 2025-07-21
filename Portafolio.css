@@ -88,8 +88,8 @@ body{
 .inicio .contenedor-redes a:hover i{
     text-shadow: 0 0 20px #91e0ba;
 }
-/* menu de navegacion */
-.navigation{
+/* menú de navegación */
+.navigation {
     width: 400px;
     height: 70px;
     background: #000;
@@ -98,60 +98,69 @@ body{
     align-items: center;
     border-radius: 10px;
     position: fixed;
-    bottom: 0;
+    bottom: 0; /* Vuelve a fijar el menú en la parte inferior */
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-.navigation ul{
-position: relative;
-display: flex;
-width: 350px;
+
+.navigation ul {
+    position: relative;
+    display: flex;
+    width: 350px;
+    padding: 0;
+    margin: 0;
 }
-.navigation ul li{
+
+.navigation ul li {
     position: relative;
     list-style: none;
     width: 70px;
     height: 70px;
     z-index: 1;
 }
-.navigation ul li a{
+
+.navigation ul li a {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    font-weight: bold;
+    height: 100%;
     text-decoration: none;
+    font-weight: bold;
 }
-.navigation ul li a i{
-    position: relative;
-    display: block;
-    line-height: 75px;
+
+.navigation ul li a i {
     font-size: 1.5em;
-    text-align: center;
-    transition: .5s;
     color: #fff;
+    transition: 0.5s;
+    margin-bottom: 5px;
 }
-.navigation ul li.active a i{
-    transform: translateY(-35px);
+
+.navigation ul li.active a i {
+    transform: translateY(-15px);
 }
-.navigation ul li a .text{
-    position: absolute;
+
+.navigation ul li a .text {
+    font-size: 0.75em;
     color: #3f516f;
-    font-size: .75em;
-    letter-spacing: .05em;
-    transition: .5s;
+    transition: 0.5s;
     opacity: 0;
-    transform: translateY(20px);
-}
-.navigation ul li.active a .text{
-    opacity: 1;
     transform: translateY(10px);
+    position: absolute;
+    bottom: 10px;
+}
+
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(0px);
     color: #fff;
 }
-.indicator{
+
+.indicator {
     background-color: #2acf7f;
     width: 70px;
     height: 70px;
@@ -159,23 +168,26 @@ width: 350px;
     top: -50%;
     border-radius: 50%;
     border: 6px solid rgba(0, 0, 0, 0);
-    transition: .5s;
+    transition: 0.5s;
+    z-index: 0;
 }
-.navigation ul li:nth-child(1).active ~ .indicator{
+
+.navigation ul li:nth-child(1).active ~ .indicator {
     transform: translateX(calc(70px * 0));
 }
-.navigation ul li:nth-child(2).active ~ .indicator{
+.navigation ul li:nth-child(2).active ~ .indicator {
     transform: translateX(calc(70px * 1));
 }
-.navigation ul li:nth-child(3).active ~ .indicator{
+.navigation ul li:nth-child(3).active ~ .indicator {
     transform: translateX(calc(70px * 2));
 }
-.navigation ul li:nth-child(4).active ~ .indicator{
+.navigation ul li:nth-child(4).active ~ .indicator {
     transform: translateX(calc(70px * 3));
 }
-.navigation ul li:nth-child(5).active ~ .indicator{
+.navigation ul li:nth-child(5).active ~ .indicator {
     transform: translateX(calc(70px * 4));
 }
+
 /*seccion sobre mi*/
 .sobre-mi{
     padding: 50px 0;
