@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aprende React Hooks</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #282c34;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+
+    pre {
+      background: #222;
+      color: #0f0;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+
+    code {
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #ddd;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧠 Aprende Hooks en React</h1>
+    <p>Conoce cómo funcionan <strong>useState</strong>, <strong>useEffect</strong> y <strong>useRef</strong></p>
+  </header>
+
+  <main>
+    <section>
+      <h2>🎯 ¿Qué son los Hooks?</h2>
+      <p>Los Hooks son funciones especiales que te permiten "engancharte" a las funcionalidades de React (como el estado o el ciclo de vida) desde componentes funcionales.</p>
+    </section>
+
+    <section>
+      <h2>🟢 useState</h2>
+      <p>Permite manejar el <strong>estado</strong> en componentes funcionales.</p>
+      <pre><code>const [contador, setContador] = useState(0);</code></pre>
+      <p>Ejemplo:</p>
+      <pre><code>
+import { useState } from "react";
+
+function Contador() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Has hecho clic {count} veces&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Aumentar&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>🔵 useEffect</h2>
+      <p>Ejecuta efectos secundarios (como peticiones HTTP o temporizadores).</p>
+      <pre><code>
+useEffect(() => {
+  console.log("El componente se montó o actualizó");
+}, []);
+      </code></pre>
+      <p>Si agregas variables en el array, se ejecuta cuando esas cambian.</p>
+    </section>
+
+    <section>
+      <h2>🟣 useRef</h2>
+      <p>Sirve para guardar valores persistentes sin causar re-renderizados.</p>
+      <pre><code>
+const inputRef = useRef();
+
+function enfocar() {
+  inputRef.current.focus();
+}
+      </code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Creado por Sebastian Ventura | React ⚛️</p>
+  </footer>
+</body>
+</html>

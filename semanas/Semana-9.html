@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aprende Spring Boot</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-top: 2rem;
+    }
+
+    pre {
+      background-color: #1e1e1e;
+      color: #00ff88;
+      padding: 1rem;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2c3e50;
+      color: white;
+    }
+
+    code {
+      color: #00bfa6;
+    }
+
+    ul {
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aprende Spring Boot 🚀</h1>
+    <p>Guía básica + ejercicios para principiantes</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>📘 ¿Qué es Spring Boot?</h2>
+      <p>
+        Spring Boot es un framework basado en Spring que simplifica la creación de aplicaciones Java modernas, especialmente servicios web. Ofrece configuración automática y embebe un servidor web como Tomcat.
+      </p>
+      <ul>
+        <li>Lenguaje: Java</li>
+        <li>Enfoque: Backend, APIs REST, microservicios</li>
+        <li>Servidor embebido: Tomcat o Jetty</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🛠️ Requisitos</h2>
+      <ul>
+        <li>JDK 17+</li>
+        <li>IDE como IntelliJ IDEA o Spring Tool Suite</li>
+        <li>Maven o Gradle</li>
+        <li>Postman (para probar APIs)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>✅ Ejercicio 1: API REST "Hola Mundo"</h2>
+      <p>Creamos un controlador REST que devuelva un saludo:</p>
+      <pre><code>
+// src/main/java/com/miapp/HolaController.java
+@RestController
+public class HolaController {
+
+  @GetMapping("/hola")
+  public String saludar() {
+    return "¡Hola desde Spring Boot!";
+  }
+}
+      </code></pre>
+      <p>Resultado esperado: visita <code>http://localhost:8080/hola</code></p>
+    </section>
+
+    <section>
+      <h2>✅ Ejercicio 2: API con conexión a base de datos (JPA)</h2>
+      <p>Modelo básico de una entidad "Estudiante" usando Spring Data JPA:</p>
+      <pre><code>
+// Estudiante.java
+@Entity
+public class Estudiante {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private String nombre;
+  private String correo;
+}
+      </code></pre>
+
+      <p>Repositorio:</p>
+      <pre><code>
+// EstudianteRepository.java
+public interface EstudianteRepository extends JpaRepository&lt;Estudiante, Long&gt; {}
+      </code></pre>
+
+      <p>Controlador:</p>
+      <pre><code>
+// EstudianteController.java
+@RestController
+@RequestMapping("/estudiantes")
+public class EstudianteController {
+
+  @Autowired
+  private EstudianteRepository repo;
+
+  @GetMapping
+  public List&lt;Estudiante&gt; listar() {
+    return repo.findAll();
+  }
+}
+      </code></pre>
+
+      <p>Resultado esperado: al visitar <code>/estudiantes</code> obtienes un JSON con estudiantes guardados.</p>
+    </section>
+
+    <section>
+      <h2>🎯 Consejos Finales</h2>
+      <ul>
+        <li>Usa <a href="https://start.spring.io/" target="_blank">start.spring.io</a> para crear tu proyecto.</li>
+        <li>Prueba los endpoints con Postman o Insomnia.</li>
+        <li>Practica creando entidades y relaciones (OneToMany, ManyToOne).</li>
+        <li>Explora Spring Security para proteger tus APIs.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Hecho con ❤️ para aprender Spring Boot. Banner Ventura - 2025
+  </footer>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Jakarta EE y Spring Boot</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f0f4f8;
+      color: #1f2937;
+    }
+    header {
+      background: #111827;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      background: white;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2563eb;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      color: #1f2937;
+    }
+    pre, code {
+      background: #1e293b;
+      color: #10b981;
+      padding: 1rem;
+      display: block;
+      white-space: pre-wrap;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Aprendiendo Jakarta EE y Spring Boot</h1>
+    <p>Introducción, componentes y ejemplos prácticos</p>
+  </header>
+
+  <main>
+
+    <!-- Sección Jakarta EE -->
+    <section>
+      <h2>¿Qué es Jakarta EE?</h2>
+      <p>Es una plataforma Java para aplicaciones empresariales robustas. Incluye APIs como Servlet, REST, CDI, JPA, entre otros.</p>
+
+      <h3>Ejercicio 1: Servlet básico</h3>
+      <pre><code>
+@WebServlet("/hello")
+public class HelloServlet extends HttpServlet {
+  protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    res.setContentType("text/html");
+    res.getWriter().println("&lt;h1&gt;Hola desde Jakarta EE&lt;/h1&gt;");
+  }
+}
+      </code></pre>
+
+      <h3>Ejercicio 2: REST API con Jakarta</h3>
+      <pre><code>
+@Path("/api")
+public class SaludoService {
+  @GET
+  @Produces(MediaType.TEXT_PLAIN)
+  public String hola() {
+    return "Hola desde Jakarta REST";
+  }
+}
+      </code></pre>
+    </section>
+
+    <!-- Sección Spring Boot -->
+    <section>
+      <h2>¿Qué es Spring Boot?</h2>
+      <p>Es un framework para crear aplicaciones Java modernas rápidamente. Basado en Spring, con configuración mínima.</p>
+
+      <h3>Ejercicio 1: Hello Controller</h3>
+      <pre><code>
+@RestController
+public class HelloController {
+
+  @GetMapping("/hello")
+  public String hello() {
+    return "Hola desde Spring Boot";
+  }
+}
+      </code></pre>
+
+      <h3>Ejercicio 2: API con parámetros</h3>
+      <pre><code>
+@RestController
+@RequestMapping("/saludo")
+public class SaludoController {
+
+  @GetMapping("/{nombre}")
+  public String saludar(@PathVariable String nombre) {
+    return "Hola " + nombre + ", bienvenido a Spring!";
+  }
+}
+      </code></pre>
+    </section>
+
+    <!-- Recursos -->
+    <section>
+      <h2>Recursos Recomendados</h2>
+      <ul>
+        <li><a href="https://jakarta.ee/" target="_blank">Sitio oficial de Jakarta EE</a></li>
+        <li><a href="https://spring.io/projects/spring-boot" target="_blank">Sitio oficial de Spring Boot</a></li>
+        <li><a href="https://start.spring.io/" target="_blank">Spring Initializr para crear proyectos</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

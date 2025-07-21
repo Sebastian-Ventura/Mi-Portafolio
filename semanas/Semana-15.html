@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Introducción a Sistemas Inteligentes con Python</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #111827;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: #2563eb;
+    }
+
+    pre {
+      background: #1e293b;
+      color: #22d3ee;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    a {
+      color: #0ea5e9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sistemas Inteligentes con Python</h1>
+    <p>Introducción y ejemplos básicos de Inteligencia Artificial usando Python</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>¿Qué es un sistema inteligente?</h2>
+      <p>Un sistema inteligente es un software capaz de percibir, razonar, aprender y tomar decisiones. Estos sistemas se basan en ramas como la inteligencia artificial, el aprendizaje automático y la lógica computacional.</p>
+    </section>
+
+    <section>
+      <h2>Ejemplo 1: Sistema experto básico</h2>
+      <p>Este ejemplo toma decisiones simples basadas en reglas.</p>
+      <pre><code># sistema_experto.py
+def diagnostico_fiebre(temp):
+    if temp >= 38:
+        return "Tienes fiebre, consulta al médico"
+    else:
+        return "No tienes fiebre"
+
+print(diagnostico_fiebre(39))</code></pre>
+      <p><strong>Salida:</strong> Tienes fiebre, consulta al médico</p>
+    </section>
+
+    <section>
+      <h2>Ejemplo 2: Clasificador de texto con machine learning (Scikit-learn)</h2>
+      <p>Este ejemplo clasifica mensajes como positivos o negativos usando aprendizaje automático.</p>
+      <pre><code># clasificador.py
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+# Datos de entrenamiento
+mensajes = ["me encanta este producto", "horrible experiencia", "excelente atención", "no me gustó", "lo odio"]
+etiquetas = ["positivo", "negativo", "positivo", "negativo", "negativo"]
+
+# Modelo
+vectorizador = CountVectorizer()
+X = vectorizador.fit_transform(mensajes)
+modelo = MultinomialNB()
+modelo.fit(X, etiquetas)
+
+# Predicción
+nuevo = vectorizador.transform(["me gustó mucho"])
+print(modelo.predict(nuevo))</code></pre>
+      <p><strong>Salida esperada:</strong> ['positivo']</p>
+    </section>
+
+    <section>
+      <h2>¿Qué bibliotecas puedo usar?</h2>
+      <ul>
+        <li><strong>Scikit-learn:</strong> modelos de machine learning clásicos.</li>
+        <li><strong>TensorFlow / PyTorch:</strong> redes neuronales profundas.</li>
+        <li><strong>OpenCV:</strong> visión por computadora.</li>
+        <li><strong>spaCy / NLTK:</strong> procesamiento de lenguaje natural (NLP).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Recursos recomendados</h2>
+      <ul>
+        <li><a href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn Oficial</a></li>
+        <li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></li>
+        <li><a href="https://realpython.com/tutorials/machine-learning/" target="_blank">Real Python - Machine Learning</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

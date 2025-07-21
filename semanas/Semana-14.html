@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Introducción a Python Flask</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
+      margin: 0;
+      padding: 0;
+      color: #1e293b;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      background: #ffffff;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #2563eb;
+    }
+
+    pre {
+      background-color: #1e293b;
+      color: #22d3ee;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    a {
+      color: #0ea5e9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Introducción a Flask (Python)</h1>
+    <p>Aprende a usar Flask como backend de forma sencilla</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>¿Qué es Flask?</h2>
+      <p>Flask es un micro-framework escrito en Python, muy utilizado para crear APIs y aplicaciones web ligeras y potentes. Es minimalista, fácil de aprender y extensible.</p>
+      <p>Para instalarlo:</p>
+      <pre><code>pip install flask</code></pre>
+    </section>
+
+    <section>
+      <h2>Ejemplo 1: Hola mundo en Flask</h2>
+      <p>Este código crea una ruta que devuelve un mensaje de saludo:</p>
+      <pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "¡Hola, mundo desde Flask!"
+
+if __name__ == "__main__":
+    app.run(debug=True)</code></pre>
+      <p>Para probarlo, guarda el archivo como <code>app.py</code> y ejecuta <code>python app.py</code>.</p>
+    </section>
+
+    <section>
+      <h2>Ejemplo 2: API con JSON</h2>
+      <p>Este ejemplo retorna un objeto JSON:</p>
+      <pre><code>from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route("/api/datos")
+def datos():
+    return jsonify({"nombre": "Juan", "edad": 30, "lenguaje": "Python"})
+
+if __name__ == "__main__":
+    app.run(debug=True)</code></pre>
+    </section>
+
+    <section>
+      <h2>Recursos útiles</h2>
+      <ul>
+        <li><a href="https://flask.palletsprojects.com/en/2.3.x/" target="_blank">Documentación oficial de Flask</a></li>
+        <li><a href="https://www.tutorialspoint.com/flask/index.htm" target="_blank">Tutorials Point: Flask</a></li>
+        <li><a href="https://realpython.com/tutorials/flask/" target="_blank">Real Python - Flask</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

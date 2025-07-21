@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejercicios React con Vite</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background: #24292e;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2, h3 {
+      color: #222;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #00ff90;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #eee;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📦 Ejercicios con React + Vite</h1>
+    <p>Aprende a usar React con el entorno de desarrollo ultrarrápido Vite</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>🚀 ¿Qué es Vite?</h2>
+      <p>Vite es una herramienta de construcción (build tool) que permite crear aplicaciones modernas de JavaScript como React, con recarga rápida (hot reload) y configuración mínima.</p>
+      <p>Para iniciar un proyecto:</p>
+      <pre><code>npm create vite@latest mi-app -- --template react
+cd mi-app
+npm install
+npm run dev</code></pre>
+    </section>
+
+    <section>
+      <h2>✅ Ejercicio 1: Contador</h2>
+      <p>Este ejercicio muestra cómo usar <strong>useState</strong> para controlar un número que aumenta cada vez que haces clic.</p>
+      <h3>📁 src/App.jsx</h3>
+      <pre><code>
+import { useState } from 'react'
+
+function App() {
+  const [contador, setContador] = useState(0)
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Contador: {contador}&lt;/h1&gt;
+      &lt;button onClick={() =&gt; setContador(contador + 1)}&gt;Aumentar&lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default App
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>✅ Ejercicio 2: Lista de tareas</h2>
+      <p>Aprende a trabajar con formularios y arrays en React.</p>
+      <h3>📁 src/App.jsx</h3>
+      <pre><code>
+import { useState } from 'react'
+
+function App() {
+  const [tarea, setTarea] = useState('')
+  const [tareas, setTareas] = useState([])
+
+  const agregarTarea = () =&gt; {
+    if (tarea.trim() === '') return
+    setTareas([...tareas, tarea])
+    setTarea('')
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Lista de Tareas&lt;/h1&gt;
+      &lt;input
+        value={tarea}
+        onChange={(e) =&gt; setTarea(e.target.value)}
+        placeholder="Nueva tarea"
+      /&gt;
+      &lt;button onClick={agregarTarea}&gt;Agregar&lt;/button&gt;
+
+      &lt;ul&gt;
+        {tareas.map((t, i) =&gt; (
+          &lt;li key={i}&gt;{t}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default App
+      </code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Aprendiendo React con Vite 🚀</p>
+  </footer>
+</body>
+</html>

@@ -289,9 +289,6 @@ padding: 60px 0;
     line-height: 25px;
 }
 /*SECCION PORTFOLIO*/
-p{
-    color: #2acf7f;
-}
 .porfolio .fila{
     display: grid;
     grid-template-columns: 340px 340px 340px;

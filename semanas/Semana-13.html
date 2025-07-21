@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Introducción a Laravel (PHP)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f4f6;
+      color: #1f2937;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2563eb;
+    }
+    pre {
+      background-color: #1e293b;
+      color: #d1d5db;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Laravel (PHP) como Backend</h1>
+    <p>Aprende a usar el framework Laravel con ejemplos prácticos</p>
+  </header>
+
+  <main>
+
+    <!-- Introducción -->
+    <section>
+      <h2>¿Qué es Laravel?</h2>
+      <p>Laravel es un framework de desarrollo web en PHP que permite construir aplicaciones robustas, seguras y mantenibles usando el patrón MVC (Modelo-Vista-Controlador).</p>
+    </section>
+
+    <!-- Instalación -->
+    <section>
+      <h2>Instalación rápida</h2>
+      <pre><code>composer create-project laravel/laravel nombre-proyecto</code></pre>
+      <p>Luego, inicia el servidor local:</p>
+      <pre><code>cd nombre-proyecto
+php artisan serve</code></pre>
+    </section>
+
+    <!-- Ejemplo de ruta simple -->
+    <section>
+      <h2>Ejemplo 1: Ruta simple</h2>
+      <p>Define esta ruta en <code>routes/web.php</code>:</p>
+      <pre><code>Route::get('/saludo', function () {
+    return "¡Hola desde Laravel!";
+});</code></pre>
+    </section>
+
+    <!-- Controlador -->
+    <section>
+      <h2>Ejemplo 2: Ruta + Controlador</h2>
+      <p>Crear un controlador:</p>
+      <pre><code>php artisan make:controller SaludoController</code></pre>
+      <p>Dentro del controlador <code>app/Http/Controllers/SaludoController.php</code>:</p>
+      <pre><code>public function mostrar() {
+    return "Saludos desde el controlador";
+}</code></pre>
+      <p>Y la ruta en <code>web.php</code>:</p>
+      <pre><code>Route::get('/saludo', [SaludoController::class, 'mostrar']);</code></pre>
+    </section>
+
+    <!-- Conexión a base de datos -->
+    <section>
+      <h2>Ejemplo 3: Conexión a base de datos</h2>
+      <p>Configura tu conexión en <code>.env</code>:</p>
+      <pre><code>DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nombre_bd
+DB_USERNAME=root
+DB_PASSWORD=</code></pre>
+      <p>Y usa Eloquent para traer datos (ejemplo con tabla "usuarios"):</p>
+      <pre><code>use App\Models\User;
+
+Route::get('/usuarios', function () {
+    return User::all();
+});</code></pre>
+    </section>
+
+    <!-- Recursos -->
+    <section>
+      <h2>Recursos adicionales</h2>
+      <ul>
+        <li><a href="https://laravel.com/docs" target="_blank">Documentación oficial de Laravel</a></li>
+        <li><a href="https://www.youtube.com/watch?v=ImtZ5yENzgE" target="_blank">Curso básico de Laravel en YouTube</a></li>
+        <li><a href="https://tinkerwell.app/" target="_blank">Tinkerwell para probar código Laravel</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
