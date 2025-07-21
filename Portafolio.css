@@ -288,27 +288,75 @@ padding: 60px 0;
     margin: 15px;
     line-height: 25px;
 }
-/*SECCION PORTFOLIO*/
-.porfolio .fila{
+/* Fuente bonita */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117;
+}
+
+/* Contenedor general del portafolio */
+.porfolio .fila {
     display: grid;
     grid-template-columns: 340px 340px 340px;
     grid-gap: 20px;
+    justify-content: center;
+    padding: 40px 0;
 }
-.porfolio .fila .item{
+
+/* Cada tarjeta o bloque */
+.porfolio .fila .item {
     background-color: #161b22;
     padding: 25px;
     margin-bottom: 30px;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
 }
-.porfolio .fila .item img{
+
+/* Imagen dentro del bloque */
+.porfolio .fila .item img {
     width: 100%;
     display: block;
     margin: auto;
     border-radius: 30px;
 }
-.porfolio .fila .item p{
+
+/* Título de la tarjeta */
+.porfolio .fila .item p.descripcion {
     color: #fff;
     margin: 20px 0;
+    text-align: center;              /* Centrar el texto */
+    font-size: 24px;                 /* Aumentar el tamaño de la letra */
+    font-family: 'Poppins', sans-serif;  /* Fuente estilizada */
+    font-weight: 600;                /* Negrita */
+}
+
+/* Contenedor para el botón */
+.boton-inferior {
+    margin-top: auto; /* Empuja el botón al final */
+    text-align: left;  /* Alinea el botón a la izquierda */
+}
+
+/* Botón principal */
+.btn.btn2 {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover del botón */
+.btn.btn2:hover {
+    background-color: #218838;
 }
 /*contacto*/
 .contacto .fila{
